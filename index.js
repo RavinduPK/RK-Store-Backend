@@ -30,7 +30,7 @@ app.use("/register", limiter);
 // --------------------- MONGODB CONNECTION ---------------------
 const PORT = process.env.PORT || 3001;
 mongoose
-  .connect(process.env.MONGO_URI)
+ .connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/login")
   .then(() => {
     app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
     console.log("MongoDB Connected to database");
@@ -137,7 +137,7 @@ app.post(
     }
     const handleLogin = async (e) => {
   e.preventDefault();
-  const res = await fetch("http://localhost:27017/login", {
+  const res = await fetch("http://localhost:5000/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
