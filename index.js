@@ -30,9 +30,7 @@ app.use("/register", limiter);
 // --------------------- MONGODB CONNECTION ---------------------
 const PORT = process.env.PORT || 3001;
 mongoose
-  .connect(process.env.MONGO_URI, {
-    
-  })
+  .connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
     console.log("MongoDB Connected to database");
