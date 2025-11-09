@@ -30,7 +30,7 @@ app.use("/register", limiter);
 // --------------------- MONGODB CONNECTION ---------------------
 const PORT = process.env.PORT || 3001;
 mongoose
-  .connect(process.env.MONGO_MAIN_URI, {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
