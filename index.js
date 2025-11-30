@@ -1,4 +1,5 @@
 // server.js
+
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -9,6 +10,8 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { body, validationResult } from "express-validator";
 import Contact from "./models/Contact.js";
+
+
 
 dotenv.config();
 const app = express();
